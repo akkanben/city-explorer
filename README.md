@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Ben Mils 
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -25,7 +25,7 @@
 
 | # | Feature Name                            | Estimated Time |  Start   | Finish  | Actual |
 | - | --------------------------------------- | -------------- | -------- | ------- | ------ |
-| 1 | Set up your React repository & API keys | 00:30          | 00:00AM  | 02:50PM | 00:00  |
+| 1 | Set up your React repository & API keys | 00:30          | 02:50PM  | 00:00AM | 00:00  |
 | 2 |                                         | 00:00          | 00:00AM  | 00:00PM | 00:00  |
 | 3 |                                         | 00:00          | 00:00AM  | 00:00PM | 00:00  |
 | 4 |                                         | 00:00          | 00:00AM  | 00:00PM | 00:00  |
