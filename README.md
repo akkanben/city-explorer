@@ -28,5 +28,5 @@
 | 1 | Set up your React repository & API keys | 00:30          | 02:50PM  | 03:23PM | 00:33  |
 | 2 | Locations                               | 00:45          | 03:50PM  | 07:00PM | 03:10  |
 | 3 | Map                                     | 01:30          | 07:15PM  | 08:10PM | 00:50  |
-| 4 |                                         | 00:00          | 00:00PM  | 00:00PM | 00:00  |
+| 4 | Errors                                  | 00:40          | 10:15PM  | 00:00PM | 00:00  |
 
