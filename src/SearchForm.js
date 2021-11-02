@@ -14,7 +14,6 @@ class SearchForm extends Component {
   handleClick = (event) => {
     event.preventDefault();
     this.props.handleSubmit();
-    console.log(this.props.cityData)
   };
 
   render() {

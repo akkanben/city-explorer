@@ -16,10 +16,16 @@ class App extends Component {
   updateSearchValue = (value) => this.setState({searchValue: value});
 
   handleSubmit = async () => {
+    this.setState({error: ''});
     const cityUrl = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.searchValue}&format=json`;
-    let cityResponse = await axios.get(cityUrl);
-    cityResponse.data[0].mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityResponse.data[0].lat},${cityResponse.data[0].lon}&zoom=12`;
-    this.setState({cityData: cityResponse.data[0]});
+    try {
+      let cityResponse = await axios.get(cityUrl);
+      cityResponse.data[0].mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityResponse.data[0].lat},${cityResponse.data[0].lon}&zoom=12`;
+      this.setState({cityData: cityResponse.data[0]});
+    } catch (e) {
+      alert(e);
+      this.setState({error: e});
+    }
   }
 
 
@@ -31,6 +37,7 @@ class App extends Component {
           updateSearchValue={this.updateSearchValue}
           handleSubmit={this.handleSubmit}
           cityData={this.state.cityData}
+          error={this.state.error}
         />
       </>
     )
@@ -38,3 +45,4 @@ class App extends Component {
 }
 
 export default App;
+
