@@ -6,14 +6,13 @@ class Main extends Component {
   render() {
     return (
       <>
-        <h1>Search</h1>
-        <SearchForm 
-          searchValue={this.props.searchValue} 
-          updateSearchValue={this.props.updateSearchValue} 
+        <SearchForm
+          searchValue={this.props.searchValue}
+          updateSearchValue={this.props.updateSearchValue}
           handleSubmit={this.props.handleSubmit} />
-        <SearchResults 
-          results={this.props.results} 
-          cityData={this.props.cityData}/>
+        <SearchResults
+          results={this.props.results}
+          cityData={this.props.cityData} />
       </>
     )
   }
