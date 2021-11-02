@@ -12,3 +12,7 @@ code {
     monospace;
 }
 
+.card {
+  align-items: center;
+
+}

@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       searchValue: '',
+      cityData: {},
     };
   }
 
@@ -18,8 +19,7 @@ class App extends Component {
     const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.searchValue}&format=json`
 
     let response = await axios.get(url);
-    console.log(response.data)
-    //this.setState({city: response.data[0]});
+    this.setState({cityData: response.data[0]});
   }
 
 
@@ -27,7 +27,11 @@ class App extends Component {
   render() {
     return (
       <>
-        <Main searchValue={this.state.searchValue} updateSearchValue={this.updateSearchValue} handleSubmit={this.handleSubmit} />
+        <Main
+          searchValue={this.state.searchValue}
+          updateSearchValue={this.updateSearchValue}
+          handleSubmit={this.handleSubmit}
+          cityData={this.state.cityData} />
       </>
     )
   }

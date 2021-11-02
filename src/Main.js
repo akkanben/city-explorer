@@ -7,8 +7,13 @@ class Main extends Component {
     return (
       <>
         <h1>Search</h1>
-        <SearchForm searchValue={this.props.searchValue} updateSearchValue={this.props.updateSearchValue} handleSubmit={this.props.handleSubmit} />
-        <SearchResults results={this.props.results} />
+        <SearchForm 
+          searchValue={this.props.searchValue} 
+          updateSearchValue={this.props.updateSearchValue} 
+          handleSubmit={this.props.handleSubmit} />
+        <SearchResults 
+          results={this.props.results} 
+          cityData={this.props.cityData}/>
       </>
     )
   }

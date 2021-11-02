@@ -7,7 +7,6 @@ import Col from 'react-bootstrap/Col';
 class SearchForm extends Component {
 
   handleChange = (event) => {
-    console.log(event.target.value)
     this.props.updateSearchValue(event.target.value);
   };
 
