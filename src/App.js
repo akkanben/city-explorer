@@ -23,7 +23,6 @@ class App extends Component {
       cityResponse.data[0].mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityResponse.data[0].lat},${cityResponse.data[0].lon}&zoom=12`;
       this.setState({cityData: cityResponse.data[0]});
     } catch (e) {
-      alert(e);
       this.setState({error: e});
     }
   }
