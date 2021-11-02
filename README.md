@@ -4,29 +4,42 @@
 **Version**: 1.0.0
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+City Explorer is a simple application that allows the user to retrieve information about a specified city. The application returns the most relevant search result including the City name, latitude, longitude, and a static map image.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+1. Clone down the repo.
+2. Enter `cd city-explorer` & `npm install`.
+3. Create an `.env` file directly inside of the "city-explorer" directory and add `REACT_APP_LOCATION_KEY=your-api-key-that-begins-pk`.
+  - Get an API key from [](https://locationiq.com).
+  - Set up your access tokens to authorize HTTP referrals: `http://localhost:your-npm-local-port/` or your deployment address.
+4. Start the app with `npm start`.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+- HTML5, CSS3, JavaScript
+- React.js
+- [React-Bootstrap library](https://react-bootstrap.github.io/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [LocationIQ API](https://locationiq.com) 
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+11-01-2021 10:59pm - Application is fully functional GET with error handling.
 
 ## Credit and Collaborations
 
-## Time Estimates
+Collaboration with [Scott Lease](https://github.com/scottie-l) during the planning phase for the web request-response cycle.
 
-### Set up your React repository & API keys.
+<div align="left" ><img src="./public/images/lab_06-data-flow.png" /></div>
+
+## Time Estimates
 
 | # | Feature Name                            | Estimated Time |  Start   | Finish  | Actual |
 | - | --------------------------------------- | -------------- | -------- | ------- | ------ |
 | 1 | Set up your React repository & API keys | 00:30          | 02:50PM  | 03:23PM | 00:33  |
 | 2 | Locations                               | 00:45          | 03:50PM  | 07:00PM | 03:10  |
 | 3 | Map                                     | 01:30          | 07:15PM  | 08:10PM | 00:50  |
-| 4 | Errors                                  | 00:40          | 10:15PM  | 00:00PM | 00:00  |
+| 4 | Errors                                  | 00:40          | 10:15PM  | 11:05PM | 00:50  |
 
