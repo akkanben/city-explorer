@@ -27,6 +27,7 @@ City Explorer is a simple application that allows the user to retrieve informati
 ## Change Log
 
 11-01-2021 10:59pm - Application is fully functional GET with error handling.
+11-02-2021 12:15AM - Application has working weather data from local server.
 
 ## Credit and Collaborations
 
