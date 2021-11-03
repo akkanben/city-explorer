@@ -26,7 +26,7 @@ class SearchForm extends Component {
                 <Form.Control type='text' placeholder="Enter City Name" value={this.props.searchValue} onChange={this.handleChange} />
               </Col>
               <Col>
-                <Button variant="dark" type="submit" onClick={this.handleClick}>Explore!</Button>
+                <Button id="explor" variant="dark" type="submit" onClick={this.handleClick}>Explore!</Button>
               </Col>
             </Row>
           </Form>
