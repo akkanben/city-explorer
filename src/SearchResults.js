@@ -5,13 +5,14 @@ import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from "react-bootstrap/Container";
+import Weather from './Weather';
 
 class SearchResults extends Component {
   render() {
     return (
       <>
         {
-          this.props.cityData.display_name &&
+          this.props.cityData.display_name && this.props.weather &&
           <Container>
             <Row>
               <Col>
@@ -25,6 +26,9 @@ class SearchResults extends Component {
                     </ListGroup>
                   </Card.Body>
                 </Card>
+              </Col>
+              <Col>
+                <Weather weather={this.props.weather} />
               </Col>
             </Row>
           </Container>
