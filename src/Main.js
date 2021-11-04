@@ -16,6 +16,7 @@ class Main extends Component {
             results={this.props.results}
             cityData={this.props.cityData}
             weather={this.props.weather}
+            movies={this.props.movies}
           />
         }
       </>

@@ -10,34 +10,47 @@ class App extends Component {
     this.state = {
       searchValue: '',
       cityData: {},
+      weather: [],
+      movies: [],
     };
   }
 
   updateSearchValue = (value) => this.setState({searchValue: value});
 
   getWeatherData = async (cityData) => {
-    const cityFormated = {
-      name: cityData.display_name.split(',')[0].toLowerCase(),
-      lat: cityData.lat.slice(0, cityData.lat.indexOf('.') + 2),
-      lon: cityData.lon.slice(0, cityData.lon.indexOf('.') + 2),
-    }
-    const weatherUrl = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${cityFormated.lat}&lon=${cityFormated.lon}&city_name=${cityFormated.name}`;
+    const weatherUrl = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${cityData.lat}&lon=${cityData.lon}`;
     try {
-      let weatherResponse = await axios.get(weatherUrl);
+      const weatherResponse = await axios.get(weatherUrl);
       this.setState({weather: weatherResponse.data});
     } catch (event) {
       this.setState({error: event})
     }
   }
 
+  getMovieData = async (cityData) => {
+    const cityNameFormatted = cityData.display_name.split(',')[0].toLowerCase()
+    const movieUrl = `${process.env.REACT_APP_SERVER_URL}/movies?city=${cityNameFormatted}`;
+    try {
+      const movieResponse = await axios.get(movieUrl);
+      this.setState({movies: movieResponse.data})
+    } catch (event) {
+      this.setState({error: event})
+    }
+
+  }
+
+  getMedia = (data) => {
+    this.getWeatherData(data);
+    this.getMovieData(data);
+  }
+
   handleSubmit = async () => {
     this.setState({error: ''});
     const cityUrl = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.searchValue}&format=json`;
     try {
-      let cityResponse = await axios.get(cityUrl);
+      const cityResponse = await axios.get(cityUrl);
       cityResponse.data[0].mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityResponse.data[0].lat},${cityResponse.data[0].lon}&zoom=12`;
-      this.getWeatherData(cityResponse.data[0]);
-      this.setState({cityData: cityResponse.data[0]});
+      this.setState({cityData: cityResponse.data[0]}, () => this.getMedia(cityResponse.data[0]));
     } catch (event) {
       console.log(event);
       console.log(event.response)
@@ -54,6 +67,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           cityData={this.state.cityData}
           weather={this.state.weather}
+          movies={this.state.movies}
           error={this.state.error}
         />
       </>
@@ -62,4 +76,3 @@ class App extends Component {
 }
 
 export default App;
-

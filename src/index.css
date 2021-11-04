@@ -12,21 +12,21 @@ code {
     monospace;
 }
 
-.card {
-  align-items: center;
-  margin-top: 5%;
-  max-height: 400px;
-}
+/*.card {*/
+  /*align-items: center;*/
+  /*margin-top: 5%;*/
+  /*max-height: 400px;*/
+/*}*/
 
-#searchForm {
-  text-align: left;
-  margin-top: 5%;
-}
+/*#searchForm {*/
+  /*text-align: left;*/
+  /*margin-top: 5%;*/
+/*}*/
 
-.alert-danger {
-  margin: 5% 4%;
-}
+/*.alert-danger {*/
+  /*margin: 5% 4%;*/
+/*}*/
 
-#explore {
-  margin-bottom: 5%;
-}
+/*#explore {*/
+  /*margin-bottom: 5%;*/
+/*}*/
