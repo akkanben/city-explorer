@@ -17,10 +17,10 @@ class SearchResults extends Component {
         {
           this.props.cityData.display_name && this.props.weather && this.props.movies &&
           <>
-            < Container >
+            <Container fluid>
               <Row>
                 <Col>
-                  <Card style={{maxWidth: '40rem'}}>
+                  <Card id="map-card" style={{maxWidth: '40rem'}}>
                     <Card.Img variant="top" src={this.props.cityData.mapUrl} />
                     <Card.Body>
                       <Card.Title>{this.props.cityData.display_name}</Card.Title >
