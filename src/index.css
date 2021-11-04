@@ -12,15 +12,12 @@ code {
     monospace;
 }
 
-.card {
-  align-items: center;
-  margin-top: 5%;
-  max-height: 400px;
-}
+
 
 #searchForm {
-  text-align: left;
+  text-align: center;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .alert-danger {
@@ -29,4 +26,25 @@ code {
 
 #explore {
   margin-bottom: 5%;
+}
+
+h2 {
+  text-align: center;
+}
+
+div.row {
+  align-items: stretch;
+  row-gap: 75px;
+}
+
+div.col {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+box-shadow:
+  0.9px 1.3px 2.5px rgba(0, 0, 0, 0.028),
+  3.1px 4.5px 8.3px rgba(0, 0, 0, 0.042),
+  14px 20px 37px rgba(0, 0, 0, 0.07);
 }
