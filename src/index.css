@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./images/pattern.png');
+  background-color: #06d6a0;
 }
 
 code {
@@ -12,14 +14,9 @@ code {
     monospace;
 }
 
-
-
-#searchForm {
-  text-align: center;
-  margin-top: 5%;
+.navbar {
   margin-bottom: 5%;
 }
-
 .alert-danger {
   margin: 5% 4%;
 }
@@ -48,3 +45,22 @@ box-shadow:
   3.1px 4.5px 8.3px rgba(0, 0, 0, 0.042),
   14px 20px 37px rgba(0, 0, 0, 0.07);
 }
+
+.nav-pills {
+  margin-top: 5%;
+}
+
+.tab-content {
+  margin: 5% 0;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  height: 100px;
+}
+
+footer p {
+  padding-top: 40px;
+}
+

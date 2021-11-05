@@ -26,12 +26,14 @@ City Explorer is a simple application that allows the user to retrieve informati
 
 ## Change Log
 
-11-01-2021 10:59pm - Application is fully functional GET with error handling.
-11-02-2021 12:15AM - Application has working weather data from local server.
+11-01-2021 10:59PM - Application is fully functional GET with error handling.
+11-03-2021 12:15AM - Application has working weather data from local server.
+11-03-2021 11:15PM - Application has working live weather and movie data from external APIs via city-explorer-api.
+11-04-2021 09:05PM - Refactored to be more modular and restyled page.
 
 ## Credit and Collaborations
 
-Collaboration with [Scott Lease](https://github.com/scottie-l) during the planning phase for the web request-response cycle.
+Collaboration with [Scott Lease](https://github.com/scottie-l) during the planning phase for the initial web request-response cycle.
 
 <div align="left" ><img src="./public/images/lab_06-data-flow.png" /></div>
 
@@ -43,4 +45,5 @@ Collaboration with [Scott Lease](https://github.com/scottie-l) during the planni
 | 2 | Locations                               | 00:45          | 03:50PM  | 07:00PM | 03:10  |
 | 3 | Map                                     | 01:30          | 07:15PM  | 08:10PM | 00:50  |
 | 4 | Errors                                  | 00:40          | 10:15PM  | 11:05PM | 00:50  |
+| 5 | Refactor                                | 01:00          | 08:15PM  | 09:05PM | 00:50  |
 

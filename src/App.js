@@ -1,6 +1,8 @@
 import {Component} from 'react';
 import './App.css';
 import Main from './Main';
+import Header from './Header';
+import Footer from './Footer';
 import axios from 'axios';
 
 class App extends Component {
@@ -36,7 +38,6 @@ class App extends Component {
     } catch (event) {
       this.setState({error: event})
     }
-
   }
 
   getMedia = (data) => {
@@ -61,15 +62,18 @@ class App extends Component {
   render() {
     return (
       <>
-        <Main
-          searchValue={this.state.searchValue}
+        <Header
           updateSearchValue={this.updateSearchValue}
+          searchValue={this.state.searchValue}
           handleSubmit={this.handleSubmit}
+        />
+        <Main
           cityData={this.state.cityData}
           weather={this.state.weather}
           movies={this.state.movies}
           error={this.state.error}
         />
+        <Footer id="thing" />
       </>
     )
   }

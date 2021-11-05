@@ -1,10 +1,7 @@
 import {Component} from "react";
-import Card from 'react-bootstrap/Card';
-import ListGroup from "react-bootstrap/ListGroup";
-import ListGroupItem from "react-bootstrap/ListGroupItem";
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Container from "react-bootstrap/Container";
+import Container from 'react-bootstrap/Container';
+import Movie from './Movie';
 
 class Movies extends Component {
 
@@ -16,23 +13,7 @@ class Movies extends Component {
           <Row>
             {
               this.props.movies.map((movie, index) => {
-                return (
-                  <Col key={index}>
-                    <Card style={{width: '20rem'}}>
-                      <Card.Img variant="top" src={movie.posterPath} />
-                      <Card.Body>
-                        <Card.Title>{movie.title}</Card.Title>
-                        <Card.Text>{movie.overview}</Card.Text>
-                        <ListGroup className="list-group-flush">
-                          <ListGroupItem>Release: {movie.releaseDate}</ListGroupItem>
-                          <ListGroupItem>Popularity: {movie.popularity}</ListGroupItem>
-                          <ListGroupItem>Average Score: {movie.voteAverage}</ListGroupItem>
-                          <ListGroupItem>Total Reviews: {movie.voteCount}</ListGroupItem>
-                        </ListGroup>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                )
+                return <Movie key={index} movie={movie} />
               })
             }
           </Row>
