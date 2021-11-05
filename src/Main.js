@@ -8,7 +8,6 @@ class Main extends Component {
       <>
         {this.props.error ? <ErrorResults error={this.props.error} />
           : <SearchResults
-            results={this.props.results}
             cityData={this.props.cityData}
             weather={this.props.weather}
             movies={this.props.movies}

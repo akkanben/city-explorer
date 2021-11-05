@@ -38,7 +38,6 @@ class App extends Component {
     } catch (event) {
       this.setState({error: event})
     }
-
   }
 
   getMedia = (data) => {
@@ -69,9 +68,6 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
         />
         <Main
-          searchValue={this.state.searchValue}
-          updateSearchValue={this.updateSearchValue}
-          handleSubmit={this.handleSubmit}
           cityData={this.state.cityData}
           weather={this.state.weather}
           movies={this.state.movies}
