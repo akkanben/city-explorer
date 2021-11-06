@@ -25,7 +25,7 @@ code {
   margin-bottom: 5%;
 }
 
-h2 {
+h2 p {
   text-align: center;
 }
 
@@ -46,6 +46,11 @@ box-shadow:
   14px 20px 37px rgba(0, 0, 0, 0.07);
 }
 
+#restaurant-container img {
+  object-fit: cover;
+  height: 100%;
+}
+
 .nav-pills {
   margin-top: 5%;
 }
@@ -54,13 +59,39 @@ box-shadow:
   margin: 5% 0;
 }
 
+h2 {
+  text-align: center;
+}
+
 footer {
   text-align: center;
   width: 100%;
   height: 100px;
+  background-color: white;
+  margin-top: 10%;
+  flex-shrink: 0;
 }
 
 footer p {
   padding-top: 40px;
 }
 
+.carousel {
+  flex-grow: 1;
+}
+
+#body-container {
+  padding: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.timestamp {
+  text-align: center;
+}
+
+img#yelp {
+  height: 1.5rem; 
+}

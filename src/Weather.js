@@ -8,7 +8,8 @@ class Weather extends Component {
   render() {
     return (
       <>
-        <h2>7-Day Forecast</h2>
+        <h2>5-Day Forecast</h2>
+        {this.props.weather[0] && <p className="timestamp" style={{fontSize: "8px"}}> {new Date(this.props.weather[0].timestamp).toString()}</p>}
         <Container>
           <Row>
             {
