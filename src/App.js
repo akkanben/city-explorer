@@ -22,7 +22,6 @@ class App extends Component {
 
   getWeatherData = async (cityData) => {
     const weatherUrl = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${cityData.lat}&lon=${cityData.lon}`;
-    console.log(weatherUrl)
     try {
       const weatherResponse = await axios.get(weatherUrl);
       this.setState({weather: weatherResponse.data});
@@ -34,10 +33,8 @@ class App extends Component {
   getMovieData = async (cityData) => {
     const cityNameFormatted = cityData.display_name.split(',')[0].toLowerCase()
     const movieUrl = `${process.env.REACT_APP_SERVER_URL}/movies?city=${cityNameFormatted}`;
-    console.log(movieUrl)
     try {
       const movieResponse = await axios.get(movieUrl);
-      console.log(movieResponse.data);
       this.setState({movies: movieResponse.data})
     } catch (event) {
       this.setState({error: event})
@@ -67,7 +64,6 @@ class App extends Component {
     try {
       const cityResponse = await axios.get(cityUrl);
       cityResponse.data[0].mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityResponse.data[0].lat},${cityResponse.data[0].lon}&zoom=12`;
-      console.log(cityResponse.data[0])
       this.setState({cityData: cityResponse.data[0]}, () => this.getMedia(cityResponse.data[0]));
     } catch (event) {
       this.setState({error: event});
