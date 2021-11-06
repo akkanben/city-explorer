@@ -11,10 +11,11 @@ City Explorer is a simple application that allows the user to retrieve informati
 
 1. Clone down the repo.
 2. Enter `cd city-explorer` & `npm install`.
-3. Create an `.env` file directly inside of the "city-explorer" directory and add `REACT_APP_LOCATION_KEY=your-api-key-that-begins-pk`.
-  - Get an API key from [](https://locationiq.com).
-  - Set up your access tokens to authorize HTTP referrals: `http://localhost:your-npm-local-port/` or your deployment address.
-4. Start the app with `npm start`.
+3. Create an `.env` file directly inside of the "city-explorer".
+  - `REACT_APP_LOCATION_KEY=your-api-key-that-begins-pk`.
+  - `REACT_APP_LOCATION_KEY` uses an API key from [LocationIQ](https://locationiq.com).
+  - `REACT_APP_SERVER_URL` uses your localhost address e.g.`REACT_APP_SERVER_URL=http://localhost:3001` or your deployment address.
+4. Start the app locally with `npm start`.
 
 ## Architecture
 
@@ -30,12 +31,14 @@ City Explorer is a simple application that allows the user to retrieve informati
 11-03-2021 12:15AM - Application has working weather data from local server.
 11-03-2021 11:15PM - Application has working live weather and movie data from external APIs via city-explorer-api.
 11-04-2021 09:05PM - Refactored to be more modular and restyled page.
+11-06-2021 02:05PM - Added Yelp API for restaurants nearby.
 
 ## Credit and Collaborations
 
-Collaboration with [Scott Lease](https://github.com/scottie-l) during the planning phase for the initial web request-response cycle.
+Collaboration with [Scott Lease](https://github.com/scottie-l), [Joseph Streifel](https://github.com/jstreifel-33), [Minhang Xie](https://github.com/minxie97), [Raajvardhan Chaukulkar](https://github.com/raajv), for data flow planning and code reviews.
 
-<div align="left" ><img src="./public/images/lab_06-data-flow.png" /></div>
+- [Client Server Data Flow](./public/images/lab_09-data-flow.png)
+- [React App Data Tree](./public/images/react-component-flow.png)
 
 ## Time Estimates
 
