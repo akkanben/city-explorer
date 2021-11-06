@@ -14,7 +14,7 @@ class App extends Component {
       searchValue: '',
       cityData: {},
       weather: [],
-      movies: [],
+      restaurants: [],
     };
   }
 
@@ -22,6 +22,7 @@ class App extends Component {
 
   getWeatherData = async (cityData) => {
     const weatherUrl = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${cityData.lat}&lon=${cityData.lon}`;
+    console.log(weatherUrl)
     try {
       const weatherResponse = await axios.get(weatherUrl);
       this.setState({weather: weatherResponse.data});
@@ -33,9 +34,22 @@ class App extends Component {
   getMovieData = async (cityData) => {
     const cityNameFormatted = cityData.display_name.split(',')[0].toLowerCase()
     const movieUrl = `${process.env.REACT_APP_SERVER_URL}/movies?city=${cityNameFormatted}`;
+    console.log(movieUrl)
     try {
       const movieResponse = await axios.get(movieUrl);
+      console.log(movieResponse.data);
       this.setState({movies: movieResponse.data})
+    } catch (event) {
+      this.setState({error: event})
+    }
+  }
+
+  getYelpData = async (cityData) => {
+    const cityNameFormatted = cityData.display_name.split(',')[0].toLowerCase()
+    const yelpUrl = `${process.env.REACT_APP_SERVER_URL}/yelp?city=${cityNameFormatted}`;
+    try {
+      const yelpResponse = await axios.get(yelpUrl);
+      this.setState({restaurants: yelpResponse.data})
     } catch (event) {
       this.setState({error: event})
     }
@@ -43,6 +57,7 @@ class App extends Component {
 
   getMedia = (data) => {
     this.getWeatherData(data);
+    this.getYelpData(data);
     this.getMovieData(data);
   }
 
@@ -52,10 +67,9 @@ class App extends Component {
     try {
       const cityResponse = await axios.get(cityUrl);
       cityResponse.data[0].mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityResponse.data[0].lat},${cityResponse.data[0].lon}&zoom=12`;
+      console.log(cityResponse.data[0])
       this.setState({cityData: cityResponse.data[0]}, () => this.getMedia(cityResponse.data[0]));
     } catch (event) {
-      console.log(event);
-      console.log(event.response)
       this.setState({error: event});
     }
   }
@@ -72,6 +86,7 @@ class App extends Component {
           cityData={this.state.cityData}
           weather={this.state.weather}
           movies={this.state.movies}
+          restaurants={this.state.restaurants}
           error={this.state.error}
           style={{flexGrow: "1"}}
         />

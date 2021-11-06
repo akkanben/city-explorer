@@ -5,11 +5,18 @@ import Movie from './Movie';
 
 class Movies extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
   render() {
     return (
       <>
         <h2>Related Movies</h2>
-        {this.props.movies[0] && <p className="timestamp" style={{fontSize: "8px"}}> {new Date(this.props.movies[0].timestamp).toString()}</p>}
+        {this.props.movies && <p className="timestamp" style={{fontSize: "8px"}}> {new Date(this.props.movies[0].timestamp).toString()}</p>}
         <Container fluid id='movieContainer'>
           <Row>
             {
