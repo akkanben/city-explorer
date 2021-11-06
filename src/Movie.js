@@ -10,7 +10,7 @@ class Movie extends Component {
     return (
       <>
         <Col>
-          <Card style={{width: '20rem'}}>
+          <Card style={{maxWidth: '35rem', minWidth: '20rem'}}>
             <Card.Img variant="top" src={this.props.movie.posterPath} />
             <Card.Body>
               <Card.Title>{this.props.movie.title}</Card.Title>

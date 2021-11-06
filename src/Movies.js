@@ -9,6 +9,7 @@ class Movies extends Component {
     return (
       <>
         <h2>Related Movies</h2>
+        {this.props.movies[0] && <p className="timestamp" style={{fontSize: "8px"}}> {new Date(this.props.movies[0].timestamp).toString()}</p>}
         <Container fluid id='movieContainer'>
           <Row>
             {

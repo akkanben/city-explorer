@@ -4,6 +4,7 @@ import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
 import axios from 'axios';
+import Container from 'react-bootstrap/Container'
 
 class App extends Component {
 
@@ -61,7 +62,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <Container id="body-container" style={{display: "flex", flexDirection: "column", alignItems: "stretch", height: "100vh"}} fluid>
         <Header
           updateSearchValue={this.updateSearchValue}
           searchValue={this.state.searchValue}
@@ -72,9 +73,10 @@ class App extends Component {
           weather={this.state.weather}
           movies={this.state.movies}
           error={this.state.error}
+          style={{flexGrow: "1"}}
         />
-        <Footer id="thing" />
-      </>
+        <Footer />
+      </Container>
     )
   }
 }
