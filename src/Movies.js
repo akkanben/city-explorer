@@ -16,16 +16,20 @@ class Movies extends Component {
     return (
       <>
         <h2>Related Movies</h2>
-        {this.props.movies && <p className="timestamp" style={{fontSize: "8px"}}> {new Date(this.props.movies[0].timestamp).toString()}</p>}
-        <Container fluid id='movieContainer'>
-          <Row>
-            {
-              this.props.movies.map((movie, index) => {
-                return <Movie key={index} movie={movie} />
-              })
-            }
-          </Row>
-        </Container>
+        {this.props.movies.length > 0 ?
+          <>
+            <p className="timestamp" style={{fontSize: "8px"}}> {new Date(this.props.movies[0].timestamp).toString()}</p>
+            <Container fluid id='movieContainer'>
+              <Row>
+                {
+                  this.props.movies.map((movie, index) => {
+                    return <Movie key={index} movie={movie} />
+                  })
+                }
+              </Row>
+            </Container>
+          </>
+          : <p>No Results</p>}
       </>
     )
   };
